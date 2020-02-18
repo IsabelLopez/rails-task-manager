@@ -1,0 +1,16 @@
+<h1>My tasks</h1>
+
+<ul>
+  <% @tasks.each do |task| %>
+  <div class="tasks">
+      <li>
+      <%= link_to task.title, displaytask_path(task) %>
+       <%= link_to image_tag('trash.svg'), destroytask_path(task),
+        method: :delete,
+        data: { confirm: "Are you sure?" } %>
+     </li>
+  </div>
+  <% end %>
+</ul>
+
+<%= link_to 'Add a new task', newrestaurant_path %>

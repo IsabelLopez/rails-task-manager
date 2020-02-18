@@ -1,0 +1,24 @@
+
+   <%= form_for(task) do |f| %>
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+
+    <%= f.label :details %>
+    <%= f.text_field :details %>
+
+    <% if @task.new_record?() %>
+      <%= 'Task not completed' %>
+    <% else %>
+      <%= f.label :completed %>
+      <%= f.text_field :completed%>
+    <% end %>
+
+    <% if @task.new_record?() %>
+      <%= f.submit 'Create Task' %>
+    <% else %>
+      <%= f.submit 'edit task' %>
+    <% end %>
+  <% end %>
+
+
+
